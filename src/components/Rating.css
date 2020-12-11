@@ -1,0 +1,11 @@
+.RadioInput {
+    margin-left: 5vh;
+    margin-top: 15px;
+}
+
+.RatingDiv {
+    font-size: calc(5px + 2vmin);
+    margin-top: 3vh;
+    border-style: solid;
+    border-color: #004514;
+}
