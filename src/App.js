@@ -22,7 +22,10 @@ function App() {
         <Rating name='Jordan Nwora'/>
         <Rating name='Sam Merrill'/>
       </form>
+      <br/>
       <button>Submit!</button>
+      <br/>
+      <p className="Subtext">Shadow Company LLC</p>
     </div>
   );
 }
