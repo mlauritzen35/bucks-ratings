@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import Voting from './Voting'
-import Summary from './Summary'
+import Voting from './Views/Voting'
+import Summary from './Views/Summary'
 
 function App() {
   const [summaryView, setSummaryView] = useState(false)

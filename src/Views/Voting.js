@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './App.css';
+import './Voting.css';
 import Rating from '../Components/Rating'
 
 function App({ setView }) {
