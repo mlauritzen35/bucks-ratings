@@ -27,3 +27,7 @@
 .App-link {
   color: #61dafb;
 }
+
+.Subtext {
+  font-size: calc(2px + 1vmin)
+}
