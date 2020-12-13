@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './Voting.css';
-import Rating from '../Components/Rating'
+import Rating from './Components/Rating'
 
 function App({ setView }) {
   const [allRating, setAllRating] = useState({
