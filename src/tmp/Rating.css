@@ -1,0 +1,32 @@
+.RadioInput {
+    margin-left: 2vh;
+    margin-right: 2vh;
+    margin-top: 15px;
+}
+
+.RatingDiv {
+    margin-top: 2vh;
+    align-items: center;
+    border-radius: 10px;
+    font-size: calc(5px + 2vmin);
+    border-style: solid;
+    border-color: #004514;
+}
+
+.SelectorsDiv {
+    display: flex;
+    width: 90vw;
+    max-width: 750px;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.InputDiv {
+    display:inline;
+}
+
+.Header {
+    font-weight: bold;
+    color: #004514;
+    text-decoration: underline;
+}

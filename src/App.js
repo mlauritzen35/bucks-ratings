@@ -1,28 +1,25 @@
-import React, { useState } from 'react'
-import Voting from './Voting'
-import Summary from './Summary'
+import Voting from './Views/Voting'
+import Summary from './Views/Summary'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import './App.css'
 
 function App() {
-  const [summaryView, setSummaryView] = useState(false)
-  if(summaryView) {
-    return (
-      <div className="App">
-        <header className="App-header">Milwaukee Bucks Ratings</header>
-        <Summary/>
-        <p className="Subtext">Shadow Company LLC</p>
-      </div>
-      )
-  } 
-  else
   return (
     <div className="App">
       <header className="App-header">Milwaukee Bucks Ratings</header>
-      <Voting setView={setSummaryView}/>
-      <br/>
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Voting />
+          </Route>
+          <Route path="/results">
+            <Summary />
+          </Route>
+        </Switch>
+      </Router>
       <p className="Subtext">Shadow Company LLC</p>
     </div>
-    
-  );
+  )
 }
 
 export default App;

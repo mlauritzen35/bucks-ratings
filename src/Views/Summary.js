@@ -2,6 +2,7 @@ import {
     ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
   } from 'recharts';
 import './Summary.css'
+import { Link } from 'react-router-dom'
 
 function Summary() {
     const ratings = [
@@ -40,23 +41,23 @@ function Summary() {
     ]
     return (
         <div className="RechartsDiv">
-        <ResponsiveContainer width={700} height={"80%"}>
-        <BarChart
-        width={1000}
-        height={600}
-        data={ratings}
-        margin={{
-          top: 5, right: 30, left: 20, bottom: 5,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey='name' />
-        <YAxis type="number" domain={[0, 10]} />
-        <Tooltip />
-        <Legend />
-        <Bar dataKey='rating' fill="#004514" />
-      </BarChart>
-        </ResponsiveContainer>
+            <ResponsiveContainer width={"95%"} height={"90%"}>
+                <BarChart
+                data={ratings}
+                margin={{
+                top: 10, right: 0, left: 0, bottom: 0,
+                }}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey='name' />
+                    <YAxis type="number" domain={[0, 10]} />
+                    <Tooltip />
+                    <Legend />
+                    <Bar dataKey='rating' fill="#004514" />
+                </BarChart>
+            </ResponsiveContainer>
+            <Link to="/">
+                <button>Return</button>
+            </Link>
         </div>
     )
 }

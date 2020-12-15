@@ -13,6 +13,10 @@
       animation: App-logo-spin infinite 20s linear;
     }
   }
+
+  .VotingDiv {
+    margin-bottom: 20px;
+  }
   
   .App-header {
     display: flex;
