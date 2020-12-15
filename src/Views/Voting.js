@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './Voting.css';
-import Rating from '../tmp/Rating'
+import Rating from '../Components/Rating'
 import { Link } from 'react-router-dom'
 
 function App() {
