@@ -5,20 +5,20 @@ import { Link } from 'react-router-dom'
 
 function App() {
   const [allRating, setAllRating] = useState({
-    Giannis: 5,
-    Khris: 5,
-    Jrue: 5,
-    Brook: 5,
-    Donte: 5,
-    Augustin: 5,
-    Portis: 5,
-    Pat: 5,
-    DJ: 5,
-    Forbes: 5,
-    Thanasis: 5,
-    Craig: 5,
-    Nwora: 5,
-    Merrill: 5
+    Giannis: null,
+    Khris: null,
+    Jrue: null,
+    Brook: null,
+    Donte: null,
+    Augustin: null,
+    Portis: null,
+    Pat: null,
+    DJ: null,
+    Forbes: null,
+    Thanasis: null,
+    Craig: null,
+    Nwora: null,
+    Merrill: null
   })
 
   return (

@@ -1,16 +1,17 @@
 .RadioInput {
-    margin-left: 2vh;
-    margin-right: 2vh;
-    margin-top: 15px;
+    display: block;
+    background-color: red;
 }
 
 .RatingDiv {
-    margin-top: 2vh;
+    margin-bottom: 2vh;
     align-items: center;
     border-radius: 10px;
     font-size: calc(5px + 2vmin);
     border-style: solid;
     border-color: #004514;
+    color: #007DC5;
+    font-family: BucksFont;
 }
 
 .SelectorsDiv {

@@ -23,6 +23,8 @@
   color: #004514;
   font-family: 'BucksFont';
   text-decoration: underline;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
 }
 
 .App-link {
