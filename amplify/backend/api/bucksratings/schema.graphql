@@ -1,0 +1,14 @@
+type Rating @model @auth(rules: [{allow: public}]) @key(name: "byGame", fields: ["gameID"]) {
+  id: ID!
+  ratee: String!
+  rating: Int!
+  gameID: ID!
+}
+
+type Game @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  opponent: String!
+  date: AWSDate!
+  Ratings: [Rating] @connection(keyName: "byGame", fields: ["id"])
+}
+ 

@@ -1,5 +1,7 @@
+import React from 'react'
 import Voting from './Views/Voting'
-import Summary from './Views/Summary'
+import Results from './Views/Results'
+import Success from './Views/Success'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import './App.css'
 
@@ -13,7 +15,10 @@ function App() {
             <Voting />
           </Route>
           <Route path="/results">
-            <Summary />
+            <Results />
+          </Route>
+          <Route path="/success">
+            <Success />
           </Route>
         </Switch>
       </Router>
