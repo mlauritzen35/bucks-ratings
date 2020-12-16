@@ -34,21 +34,22 @@ function Results() {
     }
 
     return (
-        <div className="RechartsDiv">
-            <ResponsiveContainer width={"95%"} height={"90%"}>
-                <BarChart
-                data={averageRatings}
-                margin={{
-                top: 10, right: 0, left: 0, bottom: 0,
-                }}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey='name' angle={-45} textAnchor="end" />
-                    <YAxis type="number" domain={[0, 10]} />
-                    <Tooltip />
-                    <Legend />
-                    <Bar dataKey='rating' fill="#004514" />
-                </BarChart>
-            </ResponsiveContainer>
+        <div>
+            <div className="RechartsDiv">
+                <ResponsiveContainer width={"95%"} height={"100%"}>
+                    <BarChart
+                    data={averageRatings}
+                    margin={{
+                    top: 10, right: 0, left: -30, bottom: 0,
+                    }}>
+                        <CartesianGrid strokeDasharray="3 3" />
+                        <XAxis dataKey='name' angle={-90} textAnchor="end" height="80" interval={0} />
+                        <YAxis type="number" domain={[0, 10]} />
+                        <Tooltip />
+                        <Bar dataKey='rating' fill="#004514"/>
+                    </BarChart>
+                </ResponsiveContainer>
+            </div>
             <Link to="/success">
                 <button>Return</button>
             </Link>
