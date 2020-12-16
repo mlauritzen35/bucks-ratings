@@ -28,10 +28,8 @@ function Results() {
         const groupedRatings = groupBy(ratings, 'ratee')
         for(var ratee in groupedRatings) {
             const average = groupedRatings[ratee].reduce((total, next) => total + next.rating, 0) / groupedRatings[ratee].length;
-            console.log(ratee + ' ' + average)
             setAverageRatings(averageRatings => [...averageRatings, {name: ratee, rating: average}])
         }
-        console.log(averageRatings)
       } catch (err) { console.log('error fetching ratings') }
     }
 
