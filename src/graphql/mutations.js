@@ -10,7 +10,7 @@ export const createRating = /* GraphQL */ `
       id
       ratee
       rating
-      gameID
+      gameId
       _version
       _deleted
       _lastChangedAt
@@ -28,7 +28,7 @@ export const updateRating = /* GraphQL */ `
       id
       ratee
       rating
-      gameID
+      gameId
       _version
       _deleted
       _lastChangedAt
@@ -46,108 +46,12 @@ export const deleteRating = /* GraphQL */ `
       id
       ratee
       rating
-      gameID
+      gameId
       _version
       _deleted
       _lastChangedAt
       createdAt
       updatedAt
-    }
-  }
-`;
-export const createGame = /* GraphQL */ `
-  mutation CreateGame(
-    $input: CreateGameInput!
-    $condition: ModelGameConditionInput
-  ) {
-    createGame(input: $input, condition: $condition) {
-      id
-      opponent
-      date
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
-      Ratings {
-        items {
-          id
-          ratee
-          rating
-          gameID
-          _version
-          _deleted
-          _lastChangedAt
-          createdAt
-          updatedAt
-        }
-        nextToken
-        startedAt
-      }
-    }
-  }
-`;
-export const updateGame = /* GraphQL */ `
-  mutation UpdateGame(
-    $input: UpdateGameInput!
-    $condition: ModelGameConditionInput
-  ) {
-    updateGame(input: $input, condition: $condition) {
-      id
-      opponent
-      date
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
-      Ratings {
-        items {
-          id
-          ratee
-          rating
-          gameID
-          _version
-          _deleted
-          _lastChangedAt
-          createdAt
-          updatedAt
-        }
-        nextToken
-        startedAt
-      }
-    }
-  }
-`;
-export const deleteGame = /* GraphQL */ `
-  mutation DeleteGame(
-    $input: DeleteGameInput!
-    $condition: ModelGameConditionInput
-  ) {
-    deleteGame(input: $input, condition: $condition) {
-      id
-      opponent
-      date
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
-      Ratings {
-        items {
-          id
-          ratee
-          rating
-          gameID
-          _version
-          _deleted
-          _lastChangedAt
-          createdAt
-          updatedAt
-        }
-        nextToken
-        startedAt
-      }
     }
   }
 `;

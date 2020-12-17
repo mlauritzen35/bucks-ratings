@@ -24,8 +24,8 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "gameID": {
-                    "name": "gameID",
+                "gameId": {
+                    "name": "gameId",
                     "isArray": false,
                     "type": "ID",
                     "isRequired": true,
@@ -34,79 +34,6 @@ export const schema = {
             },
             "syncable": true,
             "pluralName": "Ratings",
-            "attributes": [
-                {
-                    "type": "model",
-                    "properties": {}
-                },
-                {
-                    "type": "key",
-                    "properties": {
-                        "name": "byGame",
-                        "fields": [
-                            "gameID"
-                        ]
-                    }
-                },
-                {
-                    "type": "auth",
-                    "properties": {
-                        "rules": [
-                            {
-                                "allow": "public",
-                                "operations": [
-                                    "create",
-                                    "update",
-                                    "delete",
-                                    "read"
-                                ]
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
-        "Game": {
-            "name": "Game",
-            "fields": {
-                "id": {
-                    "name": "id",
-                    "isArray": false,
-                    "type": "ID",
-                    "isRequired": true,
-                    "attributes": []
-                },
-                "opponent": {
-                    "name": "opponent",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": true,
-                    "attributes": []
-                },
-                "date": {
-                    "name": "date",
-                    "isArray": false,
-                    "type": "AWSDate",
-                    "isRequired": true,
-                    "attributes": []
-                },
-                "Ratings": {
-                    "name": "Ratings",
-                    "isArray": true,
-                    "type": {
-                        "model": "Rating"
-                    },
-                    "isRequired": false,
-                    "attributes": [],
-                    "isArrayNullable": true,
-                    "association": {
-                        "connectionType": "HAS_MANY",
-                        "associatedWith": "gameID"
-                    }
-                }
-            },
-            "syncable": true,
-            "pluralName": "Games",
             "attributes": [
                 {
                     "type": "model",
@@ -133,5 +60,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "19ab25294f964f43f9c35d0bf8c29cbc"
+    "version": "d3a36ded33515e44dcd5ee4f6917fda7"
 };

@@ -7,7 +7,7 @@ export const onCreateRating = /* GraphQL */ `
       id
       ratee
       rating
-      gameID
+      gameId
       _version
       _deleted
       _lastChangedAt
@@ -22,7 +22,7 @@ export const onUpdateRating = /* GraphQL */ `
       id
       ratee
       rating
-      gameID
+      gameId
       _version
       _deleted
       _lastChangedAt
@@ -37,99 +37,12 @@ export const onDeleteRating = /* GraphQL */ `
       id
       ratee
       rating
-      gameID
+      gameId
       _version
       _deleted
       _lastChangedAt
       createdAt
       updatedAt
-    }
-  }
-`;
-export const onCreateGame = /* GraphQL */ `
-  subscription OnCreateGame {
-    onCreateGame {
-      id
-      opponent
-      date
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
-      Ratings {
-        items {
-          id
-          ratee
-          rating
-          gameID
-          _version
-          _deleted
-          _lastChangedAt
-          createdAt
-          updatedAt
-        }
-        nextToken
-        startedAt
-      }
-    }
-  }
-`;
-export const onUpdateGame = /* GraphQL */ `
-  subscription OnUpdateGame {
-    onUpdateGame {
-      id
-      opponent
-      date
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
-      Ratings {
-        items {
-          id
-          ratee
-          rating
-          gameID
-          _version
-          _deleted
-          _lastChangedAt
-          createdAt
-          updatedAt
-        }
-        nextToken
-        startedAt
-      }
-    }
-  }
-`;
-export const onDeleteGame = /* GraphQL */ `
-  subscription OnDeleteGame {
-    onDeleteGame {
-      id
-      opponent
-      date
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
-      Ratings {
-        items {
-          id
-          ratee
-          rating
-          gameID
-          _version
-          _deleted
-          _lastChangedAt
-          createdAt
-          updatedAt
-        }
-        nextToken
-        startedAt
-      }
     }
   }
 `;

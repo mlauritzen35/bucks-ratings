@@ -4,9 +4,8 @@ import { schema } from './schema';
 
 
 
-const { Rating, Game } = initSchema(schema);
+const { Rating } = initSchema(schema);
 
 export {
-  Rating,
-  Game
+  Rating
 };

@@ -1,43 +1,14 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import './Voting.css';
 import Rating from '../Components/Rating'
 import { Link } from 'react-router-dom'
 import Amplify, { API, graphqlOperation } from 'aws-amplify'
-import { listGames } from '../graphql/queries'
 import { createRating } from '../graphql/mutations'
 import awsExports from "../aws-exports"
 Amplify.configure(awsExports)
 
-function Voting() {
+function Voting({ currentGame }) {
   const [ratings, setRatings] = useState({})
-  const [currentGame, setCurrentGame] = useState({})
-
-  // eslint-disable-next-line
-  useEffect(() => {getGames()}, [])
-
-  function findMostRecentGame(games) {
-    return games[0]
-  }
-
-  async function getGames() {
-    try {
-      const gamesData = await API.graphql(graphqlOperation(listGames))
-      const games = gamesData.data.listGames.items
-      const currentGame = findMostRecentGame(games)
-      currentGame.formattedDate = new Date(currentGame.date)
-      currentGame.month = currentGame.formattedDate.getMonth()
-      currentGame.gameDate = currentGame.formattedDate.getDate()
-      setCurrentGame(currentGame)
-    } catch (err) { console.log('error fetching games') }
-  }
-
-  // async function addGame(game) {
-  //   try {
-  //     await API.graphql(graphqlOperation(createGame, {input: game}))
-  //   } catch (err) {
-  //     console.log('error creating game:', err)
-  //   }
-  // }
 
     async function addRating(rating) {
     try {
@@ -53,7 +24,7 @@ function Voting() {
       const submission = {
         ratee: rating,
         rating: ratings[rating],
-        gameID: currentGame.id
+        gameId: currentGame.id
       }
       addRating(submission)
     }
@@ -61,7 +32,7 @@ function Voting() {
 
   return (
     <div className="VotingDiv">
-    <p>Vs. {currentGame.opponent} {currentGame.month}/{currentGame.gameDate}</p>
+      <p>Submit your ratings for the Bucks versus the {currentGame.opponent} on {currentGame.date.getMonth()}/{currentGame.date.getDate()}!</p>
       <Rating name='Giannis Antetokounmpo' id="Giannis" rating={ratings} setRating={setRatings}/>
       <Rating name='Khris Middleton' id="Khris" rating={ratings} setRating={setRatings}/>
       <Rating name='Jrue Holiday' id="Jrue" rating={ratings} setRating={setRatings}/>
