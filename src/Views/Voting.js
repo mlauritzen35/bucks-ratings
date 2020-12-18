@@ -32,7 +32,7 @@ function Voting({ currentGame }) {
 
   return (
     <div className="VotingDiv">
-      <p>Submit your ratings for the Bucks versus the {currentGame.opponent} on {currentGame.date.getMonth()}/{currentGame.date.getDate()}!</p>
+      <p>Submit your ratings for the Bucks versus the {currentGame.opponent} on {currentGame.date.getMonth() + 1}/{currentGame.date.getDate() + 1}!</p>
       <Rating name='Giannis Antetokounmpo' id="Giannis" rating={ratings} setRating={setRatings}/>
       <Rating name='Khris Middleton' id="Khris" rating={ratings} setRating={setRatings}/>
       <Rating name='Jrue Holiday' id="Jrue" rating={ratings} setRating={setRatings}/>

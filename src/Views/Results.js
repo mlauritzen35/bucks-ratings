@@ -10,7 +10,7 @@ import awsExports from "../aws-exports"
 Amplify.configure(awsExports)
 
 function Results({ currentGame }) {
-    const [ratings, setRatings] = useState()
+    const [ratings, setRatings] = useState([])
     const [averageRatings, setAverageRatings] = useState([])
 
     useEffect(() => {getRatings()}, [])
@@ -33,14 +33,15 @@ function Results({ currentGame }) {
 
     async function getRatings() {
       try {
-        const ratingsData = await API.graphql(graphqlOperation(listRatings), {
+        const ratingsData = await API.graphql(graphqlOperation(listRatings, {
           filter: {
-            gameId: {
-              eq: currentGame.gameId
-            }
+              gameId: {
+                  eq: currentGame.id
+              }
           }
-        })
+      }))
         const ratings = ratingsData.data.listRatings.items
+        setRatings(ratings)
         const groupedRatings = groupBy(ratings, 'ratee')
         for(var ratee in groupedRatings) {
             const average = groupedRatings[ratee].reduce((total, next) => total + next.rating, 0) / groupedRatings[ratee].length;
@@ -52,7 +53,7 @@ function Results({ currentGame }) {
 
     return (
         <div>
-          <p>Results: {currentGame.opponent} - {currentGame.date.getMonth()}/{currentGame.date.getDate()}</p>
+          <p>Results: {currentGame.opponent} - {currentGame.date.getMonth() + 1}/{currentGame.date.getDate() + 1}</p>
             <div className="RechartsDiv">
                 <ResponsiveContainer width={"95%"} height={"100%"}>
                     <BarChart
@@ -68,6 +69,7 @@ function Results({ currentGame }) {
                     </BarChart>
                 </ResponsiveContainer>
             </div>
+            <p>Total Votes: {ratings.length}</p>
             <Link to="/success">
                 <button>Return</button>
             </Link>
