@@ -26,7 +26,9 @@ function Voting({ currentGame }) {
         rating: ratings[rating],
         gameId: currentGame.id
       }
-      addRating(submission)
+      if(submission.rating !== null) {
+        addRating(submission)
+      }
     }
   }
 

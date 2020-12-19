@@ -1,0 +1,35 @@
+{
+    "paths": [
+        {
+            "name": "/ratings",
+            "lambdaFunction": "bucksratings363a036a",
+            "privacy": {
+                "open": true
+            },
+            "policyResourceName": "/ratings"
+        }
+    ],
+    "resourceName": "apic89bb053",
+    "apiName": "apic89bb053",
+    "functionArns": [
+        {
+            "lambdaFunction": "bucksratings363a036a"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "amplify-bucksratings-dev-141350-authRole",
+        "unAuthRoleName": "amplify-bucksratings-dev-141350-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "bucksratings363a036a",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}

@@ -3,15 +3,28 @@ import './Rating.css'
 const Rating = ({ name, id, rating, setRating }) => {
 
     async function handleClick(e) {
-        setRating({
-            ...rating,
-            [id]: parseInt(e.target.value)
-        })
+        if(e.target.value === "N/A") {
+            setRating({
+                ...rating,
+                [id]: null
+            })  
+        }
+        else {
+            setRating({
+                ...rating,
+                [id]: parseInt(e.target.value)
+            })
+        }
     }
     return (
         <div className="RatingDiv">
             <header className="Header">{name}</header>
             <div className="SelectorsDiv">
+                <div className="InputDiv">
+                    <input value="N/A" type="radio" id={`${name}-N/A`} checked={rating[id] === null} onChange={handleClick}/>
+                    <label id={`${name}-N/A`}>N/A</label>
+                </div>
+
                 <div className="InputDiv">
                     <input value="1" type="radio" id={`${name}-1`} checked={rating[id] === 1} onChange={handleClick}/>
                     <label id={`${name}-1`}>1</label>

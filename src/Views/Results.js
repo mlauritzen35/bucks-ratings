@@ -31,6 +31,13 @@ function Results({ currentGame }) {
       }
     }
 
+    function getSubmissionCount() {
+      const khrisCount = ratings.filter((rating) => rating.ratee === 'Khris').length
+      const giannisCount = ratings.filter((rating) => rating.ratee === 'Giannis').length
+      const jrueCount = ratings.filter((rating) => rating.ratee === 'Jrue').length
+      return Math.max(khrisCount, giannisCount, jrueCount)
+    }
+
     async function getRatings() {
       try {
         const ratingsData = await API.graphql(graphqlOperation(listRatings, {
@@ -69,7 +76,7 @@ function Results({ currentGame }) {
                     </BarChart>
                 </ResponsiveContainer>
             </div>
-            <p>Total Votes: {ratings.length}</p>
+            <p>Total Submissions: {getSubmissionCount()}</p>
             <Link to="/success">
                 <button>Return</button>
             </Link>
