@@ -38,7 +38,7 @@ function Results({ currentGame }) {
               gameId: {
                   eq: currentGame.id
               }
-          }
+          }, limit: 1000
       }))
         const ratings = ratingsData.data.listRatings.items
         setRatings(ratings)
