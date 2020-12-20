@@ -1,0 +1,21 @@
+.GameEntry {
+    font-size: calc(5px + 2vmin);
+    color: #004514;
+    /* color: #007DC5; */
+    font-family: BucksFont;
+    display: flex;
+    align-items: center;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    height: 3vh;
+}
+
+.ListDiv {
+    margin-bottom: 2vh;
+    border-radius: 10px;
+    font-size: calc(5px + 2vmin);
+    border-style: solid;
+    border-color: #004514;
+    color: #007DC5;
+    font-family: BucksFont;
+}

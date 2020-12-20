@@ -50,9 +50,14 @@ function Voting({ currentGame }) {
       <Rating name='Jordan Nwora' id="Nwora" rating={ratings} setRating={setRatings}/>
       <Rating name='Sam Merrill' id="Merrill" rating={ratings} setRating={setRatings}/>
       <br/>
-      <Link to="/results">
-        <button onClick={submitRatings}>Submit!</button>
-      </Link>
+      <div className="LinksDiv">
+        <Link to="/results">
+          <button className="LinkButton" onClick={submitRatings}>Submit!</button>
+        </Link>
+        <Link to="/results">
+          <button className="LinkButton">View Results</button>
+        </Link>
+      </div>
     </div>
   );
 }

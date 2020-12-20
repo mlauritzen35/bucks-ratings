@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Voting from './Views/Voting'
 import Results from './Views/Results'
 import Success from './Views/Success'
+import Games from './Views/Games'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import './App.css'
 import games from './games'
@@ -17,8 +18,8 @@ function App() {
     })
     return earliestGame
   }
-
   const currentGame = findCurrentGame(games)
+  const [selectedGame, setSelectedGame] = useState(currentGame)
 
   return (
     <div className="App">
@@ -26,13 +27,16 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/">
-            <Voting currentGame={currentGame} />
+            <Voting currentGame={selectedGame} setGame={setSelectedGame} />
           </Route>
           <Route path="/results">
-            <Results currentGame={currentGame}/>
+            <Results currentGame={selectedGame} setGame={setSelectedGame}/>
           </Route>
           <Route path="/success">
             <Success />
+          </Route>
+          <Route path="/games">
+            <Games setGame={setSelectedGame}/>
           </Route>
         </Switch>
       </Router>

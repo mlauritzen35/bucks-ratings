@@ -35,3 +35,8 @@
   .Subtext {
     font-size: calc(2px + 1vmin)
   }
+
+  .LinkButton {
+    margin-left: 1vw;
+    margin-right: 1vw;
+  }

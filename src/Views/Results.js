@@ -45,7 +45,7 @@ function Results({ currentGame }) {
               gameId: {
                   eq: currentGame.id
               }
-          }, limit: 1000
+          }, limit: 2000
       }))
         const ratings = ratingsData.data.listRatings.items
         setRatings(ratings)
@@ -77,9 +77,15 @@ function Results({ currentGame }) {
                 </ResponsiveContainer>
             </div>
             <p>Total Submissions: {getSubmissionCount()}</p>
-            <Link to="/success">
-                <button>Return</button>
-            </Link>
+            <div>
+              <Link to="/success">
+                <button className="ButtonLink">Return</button>
+              </Link>
+              <Link to="/games">
+                <button className="ButtonLink">Other Games</button>
+              </Link>
+            </div>
+            
         </div>
     )
 }
