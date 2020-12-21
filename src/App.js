@@ -1,11 +1,8 @@
 import React, { useState } from 'react'
-import Voting from './Views/Voting'
-import Results from './Views/Results'
-import Success from './Views/Success'
-import Games from './Views/Games'
+import { Voting, Results, Success, Games, PlayerRatings } from './Views'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import './App.css'
-import games from './games'
+import games from './Constants/games'
 const today = new Date()
 
 function App() {
@@ -37,6 +34,9 @@ function App() {
           </Route>
           <Route path="/games">
             <Games setGame={setSelectedGame}/>
+          </Route>
+          <Route path="/playerRatings">
+            <PlayerRatings/>
           </Route>
         </Switch>
       </Router>

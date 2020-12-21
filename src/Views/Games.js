@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import games from '../games'
+import games from '../Constants/games'
 import './Games.css'
 const today = new Date()
 
